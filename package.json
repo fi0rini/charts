@@ -1,0 +1,19 @@
+{
+  "name": "medcloud-app",
+  "version": "1.0.0",
+  "description": "epcr cloud app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server.js",
+    "reload": "livereload www",
+    "development": "parallel server reload",
+    "globaldeps": "npm i -g parallel livereload"
+  },
+  "author": "nick fiorini <nf071590@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.13.3",
+    "npm-parallel": "^2.0.1"
+  }
+}

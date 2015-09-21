@@ -1,0 +1,12 @@
+#page{
+	width:800px;
+	padding:50px 20px 50px 20px;
+	margin:0 auto;
+	min-height:700px;
+}
+nav.home {
+	float:right;
+}
+ul.core-bullets {
+	margin:0 auto;
+}
