@@ -4,16 +4,19 @@
   "description": "epcr cloud app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node server.js",
-    "reload": "livereload www",
-    "development": "parallel server reload",
-    "globaldeps": "npm i -g parallel livereload"
+    "development": "node node_modules/npm-parallel/bin/parallel.js express livereload watch-js",
+    "express": "node server.js",
+    "livereload": "node node_modules/livereload/bin/livereload.js www",
+    "watch-js": "watch-run -p %%assets-js%% node eslint %%assets-js%%"
   },
   "author": "nick fiorini <nf071590@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^1.5.0",
     "express": "^4.13.3",
-    "npm-parallel": "^2.0.1"
+    "livereload": "^0.3.7",
+    "mongodb": "^2.0.43",
+    "npm-parallel": "^2.0.1",
+    "watch-run": "^1.2.2"
   }
 }
