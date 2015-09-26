@@ -6,8 +6,8 @@
   "scripts": {
     "development": "node node_modules/npm-parallel/bin/parallel.js express livereload watch-js",
     "express": "node server.js",
-    "livereload": "node node_modules/livereload/bin/livereload.js www",
-    "watch-js": "watch-run -p %%assets-js%% node eslint %%assets-js%%"
+    "livereload": "node node_modules/livereload/bin/livereload.js web",
+    "watch-js": "watch-run node eslint assets/js"
   },
   "author": "nick fiorini <nf071590@gmail.com>",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "livereload": "^0.3.7",
     "mongodb": "^2.0.43",
     "npm-parallel": "^2.0.1",
+    "split": "^1.0.0",
     "watch-run": "^1.2.2"
   }
 }

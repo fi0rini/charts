@@ -1,11 +1,11 @@
 var express	= require('express');
 var app 	= express();
 
-app.use('/', 		express.static(__dirname + '/www'));
-app.use('/login', 	express.static(__dirname + '/www/pages/login'))
+app.use('/', 		express.static(__dirname + '/web'));
+app.use('/login', 	express.static(__dirname + '/web/pages/login'))
 
 /** hold all static assets */
-app.use('/assets', 	express.static(__dirname + '/assets'));
+app.use('/assets', 	express.static(__dirname + '/web/assets'));
 
 
 var server 	= app.listen(3000);
