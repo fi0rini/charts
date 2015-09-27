@@ -12,5 +12,5 @@ Install babel globally
 >`npm i -g babel`
 
 Start the local development server
->`npm run development`
+>`npm run dev-server`
 
