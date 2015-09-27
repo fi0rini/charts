@@ -4,10 +4,12 @@
   "description": "epcr cloud app",
   "main": "index.js",
   "scripts": {
-    "development": "node node_modules/npm-parallel/bin/parallel.js express livereload watch-js",
-    "express": "node server.js",
-    "livereload": "node node_modules/livereload/bin/livereload.js web",
-    "watch-js": "watch-run node eslint assets/js"
+    	"development": 	"node node_modules/npm-parallel/bin/parallel.js express babel livereload watch-js",
+    	
+	"babel":	"babel web/assets --watch --out-dir build",
+	"express": 	"node server.js",
+	"livereload": 	"node node_modules/livereload/bin/livereload.js web",
+    	"watch-js": 	"watch-run node eslint assets/js"
   },
   "author": "nick fiorini <nf071590@gmail.com>",
   "license": "ISC",
