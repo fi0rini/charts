@@ -5,15 +5,12 @@
 2. [mongodb](www.mongodo.org)
 
 ## Getting Started
-1. Install local dependencies
+Install local dependencies
+>`npm i` 
 
-`npm i` 
+Install babel globally
+>`npm i -g babel`
 
-2. Install babel globally
-
-`npm i -g babel`
-
-3. Start the local development server
-
-`npm run development`
+Start the local development server
+>`npm run development`
 
