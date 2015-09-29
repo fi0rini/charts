@@ -13,3 +13,23 @@ ul.core-bullets {
 ul.no-more {
 	list-style: none;
 }
+.marg_top_15 {
+	margin-top:15px;
+}
+.w_75pct {
+	width:75%;
+}
+.centered {
+	text-align: center;
+	margin:0 auto;
+}
+.tileish {
+	border:1px solid #DDD;
+	box-shadow: 0 0 10px 0 #DDD;
+	border-radius:10px;
+	padding-bottom:25px;
+}
+input[type="text"],
+input[type="password"] {
+	border:5px;
+}

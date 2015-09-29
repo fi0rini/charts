@@ -17,7 +17,7 @@
     "babel":          "babel assets -D --watch --out-dir build",
     "express":        "node server.js",
     "vendor":         "cp -r vendor build/vendor",
-    "livereload":     "node node_modules/livereload/bin/livereload.js assets",
+    "livereload":     "node node_modules/livereload/bin/livereload.js build",
     "watch-js":       "watch-run node eslint assets/js",
     "preserver":      "npm i; npm run babelcheck;npm run build;",
     "server":	      "node server.js"
