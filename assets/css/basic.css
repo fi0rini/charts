@@ -10,3 +10,6 @@ nav.home {
 ul.core-bullets {
 	margin:0 auto;
 }
+ul.no-more {
+	list-style: none;
+}

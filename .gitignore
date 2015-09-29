@@ -138,7 +138,3 @@ node_modules/
 ##################
 .sass-cache
 
-# Mongodb Stuff #
-#################
-nemsis
-mongodb
