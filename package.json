@@ -7,20 +7,25 @@
       "port": "9000"
   },
   "scripts": {
-    "predev-server":  "npm i; npm run babelcheck;npm run vendor",
+    "predev-server":  "npm i; npm run babelcheck; npm run clean; ",
     "dev-server":     "node node_modules/npm-parallel/bin/parallel.js express babel livereload watch-js",
-    "clean":          "rm -rf build",
+    
+    "preclean":       "",
+    "clean":          "rm -rf dist",
+    "postclean":      "mkdir -p dist; cp -r vendor dist/vendor",
+    
     "prebuild":       "npm run clean",
-    "build":          "babel assets -D --out-dir build",
+    "build":          "babel assets -D --out-dir dist",
     "postbuild":      "npm run vendor",
+    
     "babelcheck":     "type babel >/dev/null 2>&1 || { echo >&2 \"installing babel globally\"; npm i -g babel;exit 0;}",
-    "babel":          "babel assets -D --watch --out-dir build",
+    "babel":          "babel assets -D --watch --out-dir dist",
+
     "express":        "node server.js",
-    "vendor":         "cp -r vendor build/vendor",
-    "livereload":     "node node_modules/livereload/bin/livereload.js build",
+    "livereload":     "node node_modules/livereload/bin/livereload.js dist",
     "watch-js":       "watch-run node eslint assets/js",
-    "preserver":      "npm i; npm run babelcheck;npm run build;",
-    "server":	      "node server.js"
+    "preserver":      "npm i; npm run babelcheck; npm run build;",
+    "server":	        "node server.js"
   },
   "author": "nick fiorini <nf071590@gmail.com>",
   "license": "ISC",
