@@ -7,8 +7,8 @@
       "port": "9000"
   },
   "scripts": {
-    "predev-server":  "npm i; npm run babelcheck; npm run clean; ",
-    "dev-server":     "node node_modules/npm-parallel/bin/parallel.js express babel livereload watch-js",
+    "preserver":      "npm i; npm run babelcheck; npm run clean; ",
+    "server":         "node node_modules/npm-parallel/bin/parallel.js express babel livereload watch-js",
     
     "preclean":       "",
     "clean":          "rm -rf dist",
@@ -23,10 +23,7 @@
 
     "express":        "node server/server.js",
     "livereload":     "node node_modules/livereload/bin/livereload.js dist",
-    "watch-js":       "watch-run node eslint assets/js",
-
-    "preserver":      "npm i; npm run babelcheck; npm run build;",
-    "server":	      "node server.js"
+    "watch-js":       "watch-run node eslint assets/js"
   },
   "author": "nick fiorini <nf071590@gmail.com>",
   "license": "ISC",

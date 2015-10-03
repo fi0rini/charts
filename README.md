@@ -4,13 +4,9 @@
 1. [node](www.nodejs.org) & [npm](www.nodejs.org)
 
 ## Getting Started
-Start the local development server
-`npm run dev-server`
+Don't run `npm i[nstall]`, all you have to do is start the server with
 
-**Or** 
-
-Start the build server
-   `npm run server`
+`npm run server`
 
 ### Important notes
 Eventually we will add a watch-less for using less and having it compile and building during development
