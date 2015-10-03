@@ -12,20 +12,21 @@
     
     "preclean":       "",
     "clean":          "rm -rf dist",
-    "postclean":      "mkdir -p dist; cp -r vendor dist/vendor",
+    "postclean":      "mkdir -p dist; rsync -av --exclude='assets' web/ dist; rsync -av web/assets/vendor dist/assets",
     
     "prebuild":       "npm run clean",
-    "build":          "babel assets -D --out-dir dist",
-    "postbuild":      "npm run vendor",
+    "build":          "babel web/assets -D --out-dir dist/assets",
+    "postbuild":      "",
     
     "babelcheck":     "type babel >/dev/null 2>&1 || { echo >&2 \"installing babel globally\"; npm i -g babel;exit 0;}",
-    "babel":          "babel assets -D --watch --out-dir dist",
+    "babel":          "babel web/assets --ignore=web/assets/vendor/**/* -D --watch --out-dir dist/assets",
 
-    "express":        "node server.js",
+    "express":        "node server/server.js",
     "livereload":     "node node_modules/livereload/bin/livereload.js dist",
     "watch-js":       "watch-run node eslint assets/js",
+
     "preserver":      "npm i; npm run babelcheck; npm run build;",
-    "server":	        "node server.js"
+    "server":	      "node server.js"
   },
   "author": "nick fiorini <nf071590@gmail.com>",
   "license": "ISC",
