@@ -4,9 +4,11 @@
 1. [node](www.nodejs.org) & [npm](www.nodejs.org)
 
 ## Getting Started
-Don't run `npm i[nstall]`, all you have to do is start the server with
+Don't run `npm i[nstall]`, all you have to do is run
 
-`npm run server`
+`npm start`
+
+**NOTE:** Linux support only at this time
 
 ### Important notes
 Eventually we will add a watch-less for using less and having it compile and building during development

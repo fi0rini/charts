@@ -3,36 +3,32 @@
   "version": "1.0.0",
   "description": "epcr cloud app",
   "main": "index.js",
-  "config":  {
-      "port": "9000"
+  "config": {
+    "port": "9000"
   },
   "scripts": {
-    "preserver":      "npm i; npm run babelcheck; npm run clean; ",
-    "server":         "node node_modules/npm-parallel/bin/parallel.js express babel livereload watch-js",
-    
-    "preclean":       "",
-    "clean":          "rm -rf dist",
-    "postclean":      "mkdir -p dist; rsync -av --exclude='assets' web/ dist; rsync -av web/assets/vendor dist/assets",
-    
-    "prebuild":       "npm run clean",
-    "build":          "babel web/assets -D --out-dir dist/assets",
-    "postbuild":      "",
-    
-    "babelcheck":     "type babel >/dev/null 2>&1 || { echo >&2 \"installing babel globally\"; npm i -g babel;exit 0;}",
-    "babel":          "babel web/assets --ignore=web/assets/vendor/**/* -D --watch --out-dir dist/assets",
-
-    "express":        "node server/server.js",
-    "livereload":     "node node_modules/livereload/bin/livereload.js dist",
-    "watch-js":       "watch-run node eslint assets/js"
+    "prestart": "npm i; npm run prebuild;",
+    "start": "$npm_config_bin/parallel server babel livereload watch-js watch-less",
+    "preclean": "",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean; mkdir dist; rsync -av --exclude='assets' web/ dist; rsync -av web/assets/vendor dist/assets",
+    "build": "$npm_config_bin/babel web/assets -D --out-dir dist/assets",
+    "babel": "$npm_config_bin/babel web/assets --ignore=web/assets/vendor/**/* -D --watch --out-dir dist/assets",
+    "server": "node server/server.js",
+    "livereload": "$npm_config_bin/livereload dist",
+    "watch-js": "$npm_config_bin/watch-run node eslint web/assets/js",
+    "watch-less": "$npm_config_bin/simp-less --in web/assets/less --out dist/assets/css",
+    "env": "env"
   },
   "author": "nick fiorini <nf071590@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^1.5.0",
+    "babel": "^5.8.23",
+    "eslint": "^1.6.0",
     "express": "^4.13.3",
     "livereload": "^0.3.7",
-    "mongodb": "^2.0.43",
     "npm-parallel": "^2.0.1",
+    "simp-less": "^1.1.0",
     "split": "^1.0.0",
     "watch-run": "^1.2.2"
   }
