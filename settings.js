@@ -1,11 +1,12 @@
 "use strict";
 let extend	= require('extend');
+let path 	= require('path');
 
 let defaults 	= {
 	port:   "9000" ,
 	base:   __dirname,
-    raw:    __dirname + '/web',
-    dev:    __dirname + '/dist'
+    web:    __dirname + path.sep + 'web',
+    dev:    __dirname + path.sep + 'dist'
 };
 
 module.exports	= function(options){

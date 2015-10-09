@@ -3,33 +3,23 @@
   "version": "1.0.0",
   "description": "epcr cloud app",
   "main": "index.js",
-  "config": {
-    "port": "9000"
-  },
+  "config": {},
   "scripts": {
-    "prestart": "npm i; npm run prebuild;",
-    "start": "$npm_config_bin/parallel server babel livereload watch-js watch-less",
-    "preclean": "",
-    "clean": "rm -rf dist",
-    "prebuild": "npm run clean; mkdir dist; rsync -av --exclude='assets' web/ dist; rsync -av web/assets/vendor dist/assets",
-    "build": "$npm_config_bin/babel web/assets -D --out-dir dist/assets",
-    "babel": "$npm_config_bin/babel web/assets --ignore=web/assets/vendor/**/* -D --watch --out-dir dist/assets",
+    "start": "./node_modules/.bin/parallel server watch:babel",
     "server": "node server/server.js",
-    "livereload": "$npm_config_bin/livereload dist",
-    "watch-js": "$npm_config_bin/watch-run node eslint web/assets/js",
-    "watch-less": "$npm_config_bin/simp-less --in web/assets/less --out dist/assets/css",
+    "clean": "rm -rf dist",
+    "watch:babel": "babel web/assets/babel -D --watch --out-dir web/assets/js",
     "env": "env"
   },
   "author": "nick fiorini <nf071590@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "babel": "^5.8.23",
-    "eslint": "^1.6.0",
+    "live-server": "^0.8.1",
+    "npm-parallel": "^2.0.1"
+  },
+  "dependencies": {
     "express": "^4.13.3",
-    "livereload": "^0.3.7",
-    "npm-parallel": "^2.0.1",
-    "simp-less": "^1.1.0",
-    "split": "^1.0.0",
-    "watch-run": "^1.2.2"
+    "extend": "^3.0.0"
   }
 }

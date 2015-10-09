@@ -1,37 +1,15 @@
-"use strict";
-(function(){
-    // some lets 
-	let settings 	= require('../settings')();
-    let dest        = process.argv[2] === "--raw" ?
-                        settings.raw :
-                        settings.dev ;
-                        
-	let readdir 	= require('fs').readdirSync;
-	let express	    = require('express');
-	let appsies 	= express();
-	let server 	    = appsies.listen(settings.port);
-	
-	// return all directories in pages and dynamically map them
-	let pages = readdir( dest + '/pages' )
-		
-		// map each path to object {base,path}
-		.map( page => ({
-			base: '/' + page, 
-			path: dest + '/pages/' + page
-		})) 
+#!/usr/bin/env node
+var liveServer = require("live-server");
+var settings   = require('../settings.js')();
 
-		// Map static pages
-		.forEach( page => 
-			appsies.use( page.base, express.static(page.path) ) &&
-            process.stdout.write('server page mapped    : ' + page.path + '\n')
-		);
+var params = {
+    port: 8181, // Set the server port. Defaults to 8080.
+    host: "0.0.0.0", // Set the address to bind to. Defaults to 0.0.0.0.
+    root: settings.web, // Set root directory that's being server. Defaults to cwd.
+    open: false, // When false, it won't load your browser by default.
+    ignore: 'scss,my/templates', // comma-separated string for paths to ignore
+    file: "index.html", // When set, serve this file for every 404 (useful for single-page applications)
+    wait: 1000 // Waits for all changes, before reloading. Defaults to 0 sec.
+};
 
-	// Configure static directories
-	appsies.use('/', 		express.static( dest + '/home'));
-	appsies.use('/assets', 	express.static( dest + '/assets'));
-
-	// Let the user know where the server is listening after everything is finished
-    process.stdout.write('server started on     : ' + dest + '\n'); 
-	process.stdout.write('server listening on   : ' + settings.port + '\n');
-
-}());
+liveServer.start(params);
