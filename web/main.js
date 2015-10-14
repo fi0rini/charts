@@ -7,3 +7,13 @@
         }
     });
 }());
+
+// main entry point
+define(['data'], function(data) {
+    var prop;
+    var ems = data.EMSDataSet
+    for(prop in ems) {
+        if(ems[prop].Codes)
+            console.log(ems[prop].Codes);
+    }
+});
