@@ -1,6 +1,6 @@
 'use strict';
 
-define(['React', 'datasets'], function (React, DataSets) {
+define(['react', 'datasets'], function (React, DataSets) {
 	console.log(DataSets);
 	var HelloWorld = React.createClass({
 		displayName: 'HelloWorld',

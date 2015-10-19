@@ -1,5 +1,12 @@
 define([], function() {
 return {
+      "minInclusive": "",
+      "maxInclusive": "",
+      "minExclusive": "",
+      "totalDigits": "",
+      "fractionDigits": "",
+      "pattern": ""
+    },
   "DEMDataSet": {
     "dState.01": {
       "DatasetType": "element",
@@ -61,13 +68,6 @@ return {
       "PNList": "",
       "minLength": "2",
       "length": "100",
-      "minInclusive": "",
-      "maxInclusive": "",
-      "minExclusive": "",
-      "totalDigits": "",
-      "fractionDigits": "",
-      "pattern": ""
-    },
     "dCustomConfiguration.06": {
       "DatasetType": "element",
       "ElementName": "Custom Data Element Potential Values",

@@ -1,0 +1,15 @@
+{
+	"code": "123123",
+	"name": "Ambulance XYZ",
+	"coordinates": {
+		"x": "101.100",
+		"y": "20.00"
+	},
+	"address": {
+		"line1": "123 Main Street",
+		"line2": "",
+		"zip": "12121",
+		"city": "Valhalla",
+		"state": "AZ"
+	}
+}

@@ -5,10 +5,11 @@
   "main": "index.js",
   "config": {},
   "scripts": {
-    "start": "./node_modules/.bin/parallel server watch:babel",
+    "start": "./node_modules/.bin/parallel server proxy watch:babel",
     "server": "node server/server.js",
+    "proxy": "node server/proxy.js",
     "clean": "rm -rf dist",
-    "watch:babel": "babel web/assets/babel -D --watch --out-dir web/assets/js",
+    "watch:babel": "babel web/assets/pages -D --watch --out-dir web/assets/js",
     "env": "env"
   },
   "author": "nick fiorini <nf071590@gmail.com>",
@@ -19,6 +20,7 @@
   },
   "dependencies": {
     "express": "^4.13.3",
-    "extend": "^3.0.0"
+    "extend": "^3.0.0",
+    "mongodb": "^2.0.46"
   }
 }

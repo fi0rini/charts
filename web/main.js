@@ -3,7 +3,7 @@
         baseUrl: "/assets/js",
         paths: {
         	"pcr": 	"pcr",
-        	"React": 	"/assets/vendor/react-0.13.3/build/react"
+        	"react": "/assets/vendor/react-0.14.0/build/react"
         }
     });
 }());
