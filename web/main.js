@@ -1,19 +1,27 @@
 (function(){
     require.config({
-        baseUrl: "/assets/js",
+        baseUrl: "/assets/dist",
         paths: {
-        	"pcr": 	"pcr",
-        	"react": "/assets/vendor/react-0.14.0/build/react"
+        	"jquery": 		"/assets/vendor/jquery/jquery",
+        	"react": 		"/assets/vendor/react-0.14.0/build/react",
+        	"react-dom": 	"/assets/vendor/react-0.14.0/build/react-dom"
         }
     });
 }());
 
-// main entry point
-define(['data'], function(data) {
-    var prop;
-    var ems = data.EMSDataSet
-    for(prop in ems) {
-        if(ems[prop].Codes)
-            console.log(ems[prop].Codes);
-    }
-});
+define(['jquery' , 'data'], function ($, data) {
+	console.log('Hellow');
+	$.ajax('//localhost:3000/api/Users/login', {
+		method: 'POST',
+		data: {
+			email: "fred@gmail.com",
+			password: "xxx"
+		},
+		success: function (res) {
+			console.log(res);
+		},
+		error: function (err) {
+			console.error('Something went wrong', err);
+		}
+	})
+});	

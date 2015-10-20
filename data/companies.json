@@ -1,0 +1,126 @@
+{
+	"code": "1",
+	"name": "Ambulance abc",
+	"coordinates": {},
+	"address": {
+		"line1": "123 Main Street",
+		"line2": "",
+		"zip": "12121",
+		"city": "Valhalla",
+		"state": "AZ"
+	},
+	"ambulances": [
+		{"year": "2000", "make": "Ford", "model": "town", "code": "A500"},
+		{"year": "2010", "make": "Ford", "model": "xZer", "code": "A501"},
+		{"year": "2012", "make": "Ford", "model": "Fanz", "code": "A502"}
+	],
+	"challenges": []
+}
+{
+	"code":"2",
+	"name": "Ambulance def",
+	"coordinates": {},
+	"address": {
+		"line1": "123 Main Street",
+		"line2": "",
+		"zip": "12121",
+		"city": "Valhalla",
+		"state": "AZ"
+	},
+	"ambulances": [
+		{"year": "2000", "make": "Ford", "model": "town", "code": "A500"},
+		{"year": "2010", "make": "Ford", "model": "xZer", "code": "A501"},
+		{"year": "2012", "make": "Ford", "model": "Fanz", "code": "A502"}
+	],
+	"challenges": []
+}
+{
+	"code":"3",
+	"name": "Ambulance ghi",
+	"coordinates": {},
+	"address": {
+		"line1": "123 Main Street",
+		"line2": "",
+		"zip": "12121",
+		"city": "Valhalla",
+		"state": "AZ"
+	},
+	"ambulances": [
+		{"year": "2000", "make": "Ford", "model": "town", "code": "A500"},
+		{"year": "2010", "make": "Ford", "model": "xZer", "code": "A501"},
+		{"year": "2012", "make": "Ford", "model": "Fanz", "code": "A502"}
+	],
+	"challenges": []
+}
+{
+	"code":"4",
+	"name": "Ambulance jkl",
+	"coordinates": {},
+	"address": {
+		"line1": "123 Main Street",
+		"line2": "",
+		"zip": "12121",
+		"city": "Valhalla",
+		"state": "AZ"
+	},
+	"ambulances": [
+		{"year": "2000", "make": "Ford", "model": "town", "code": "A500"},
+		{"year": "2010", "make": "Ford", "model": "xZer", "code": "A501"},
+		{"year": "2012", "make": "Ford", "model": "Fanz", "code": "A502"}
+	],
+	"challenges": []
+}
+{
+	"code":"5",
+	"name": "Ambulance mno",
+	"coordinates": {},
+	"address": {
+		"line1": "123 Main Street",
+		"line2": "",
+		"zip": "12121",
+		"city": "Valhalla",
+		"state": "AZ"
+	},
+	"ambulances": [
+		{"year": "2000", "make": "Ford", "model": "town", "code": "A500"},
+		{"year": "2010", "make": "Ford", "model": "xZer", "code": "A501"},
+		{"year": "2012", "make": "Ford", "model": "Fanz", "code": "A502"}
+	],
+	"challenges": []
+}
+{
+	"code":"6",
+	"name": "Ambulance pqr",
+	"coordinates": {},
+	"address": {
+		"line1": "123 Main Street",
+		"line2": "",
+		"zip": "12121",
+		"city": "Valhalla",
+		"state": "AZ"
+	},
+	"ambulances": [
+		{"year": "2000", "make": "Ford", "model": "town", "code": "A500"},
+		{"year": "2010", "make": "Ford", "model": "xZer", "code": "A501"},
+		{"year": "2012", "make": "Ford", "model": "Fanz", "code": "A502"}
+	],
+	"challenges": []
+}
+{
+	"code":"7",
+	"name": "Ambulance stu",
+	"coordinates": {},
+	"address": {
+		"line1": "123 Main Street",
+		"line2": "",
+		"zip": "12121",
+		"city": "Valhalla",
+		"state": "AZ"
+	},
+	"ambulances": [
+		{"year": "2000", "make": "Ford", "model": "town", "code": "A500"},
+		{"year": "2010", "make": "Ford", "model": "xZer", "code": "A501"},
+		{"year": "2012", "make": "Ford", "model": "Fanz", "code": "A502"}
+	],
+	"challenges": []
+}
