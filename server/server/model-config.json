@@ -36,9 +36,5 @@
   "companies": {
     "dataSource": "db",
     "public": false
-  },
-  "humans": {
-    "dataSource": "db",
-    "public": false
   }
 }

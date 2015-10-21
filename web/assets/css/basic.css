@@ -1,30 +1,50 @@
 #page {
-	width:800px;
+	width:100%;
 	margin:0 auto;
 }
-
-nav.home {
-	margin-top:5px;
-	text-align:right;
+.huge-font {
+	font-size:70px;
 }
+.center {
+	text-align: center;
+}
+.middle {
+	margin:0 auto;
+}
+.sub-title {
+	margin-top:0px;
+}
+.cloud {
+	margin-left:10px;
+}
+.footer {}
 
+.m_top_50{
+	margin-top:65px;
+}
 .clear{
 	clear:both;
 }
-
+footer .link {
+	width:72px;
+	text-align:center;
+	display:inline-block;
+}
+footer .links {
+	margin-top:8px;
+}
 .centered {
 	margin:0 auto;
 	text-align:center;
 }
-
+.rel {
+	position:relative;
+}
+.top_17 {
+	top: 17px;
+}
 .w_75pct {
 	width:75%;
-}
-
-.tileish {
-	border:1px solid #DDD;
-	padding-bottom:20px;
-	box-shadow: 0px 13px 8px -8px #DDD;
 }
 
 input[type="text"],

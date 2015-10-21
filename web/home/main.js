@@ -1,9 +1,9 @@
 (function(){
     require.config({
-        baseUrl: "/assets/js",
+        baseUrl: "/assets/dist",
         paths: {
-        	"react": 		"/assets/vendor/react-0.14.0/build/react",
-        	"react-dom": 	"/assets/vendor/react-0.14.0/build/react-dom"
+        	"react": 		"/assets/vendor/react-0.14.0/react",
+        	"react-dom": 	"/assets/vendor/react-0.14.0/react-dom"
         }
     });
 }());
