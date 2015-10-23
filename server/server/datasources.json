@@ -2,7 +2,7 @@
   "db": {
     "host": "127.0.0.1",
     "port": "27017",
-    "database": "cloudems",
+    "database": "Charts",
     "name": "db",
     "connector": "mongodb"
   }

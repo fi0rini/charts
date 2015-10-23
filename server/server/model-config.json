@@ -33,8 +33,8 @@
     "dataSource": "db",
     "public": false
   },
-  "companies": {
+  "Companies": {
     "dataSource": "db",
-    "public": false
+    "public": true
   }
 }
