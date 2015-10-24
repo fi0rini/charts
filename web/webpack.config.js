@@ -4,12 +4,13 @@ var webpack = require('webpack');
 module.exports = {
     entry: __dirname + '/src/main.js',
     output: {
-        path: __dirname + '/',
+        path: __dirname + '/build',
         filename: 'bundle.js'
     },
     module: {
         loaders: [
-            {test: path.join(__dirname, 'src'), loader:'babel-loader'}
+            {test: path.join(__dirname, 'src'), loader:'babel-loader'},
+            {text: /\.css$/, loader:'style!css'}
         ]
     },
     plugins: [
