@@ -1,9 +1,16 @@
 // main entry point for application
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, Link, IndexRoute} from 'react-router';
+import {Router, Route, NoMatch} from 'react-router';
+
 import App from './App.jsx';
-import Home from './pages/Home.jsx';
+import Home from './pages/HomePage.jsx';
+
+// global style
+import './style/style.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.css';
+
 
 const About = React.createClass({
   render() {
@@ -35,14 +42,10 @@ const Landing = React.createClass({
 })
 
 ReactDOM.render((
-  <Router>
+   <Router>
     <Route path="/" component={App}>
-      {/* Show the dashboard at / */}
-      <IndexRoute component={Home} />
-      <Route path="about" component={About} />
-      <Route path="inbox" component={Inbox}>
-        <Route path="messages/:id" component={Message} />
-      </Route>
+      <Route path="about" component={About}/>
+      <Route path="*" component={NoMatch}/>
     </Route>
   </Router>
 ), document.getElementById("app"))

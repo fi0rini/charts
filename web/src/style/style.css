@@ -1,0 +1,56 @@
+#page {
+	width:100%;
+	margin:0 auto;
+}
+.huge-font {
+	font-size:70px;
+}
+.center {
+	text-align: center;
+}
+.middle {
+	margin:0 auto;
+}
+.sub-title {
+	margin-top:0px;
+}
+.cloud {
+	margin-left:10px;
+}
+.footer {}
+
+.m_top_50{
+	margin-top:65px;
+}
+.clear{
+	clear:both;
+}
+footer .link {
+	width:72px;
+	text-align:center;
+	display:inline-block;
+}
+footer .links {
+	margin-top:8px;
+}
+.centered {
+	margin:0 auto;
+	text-align:center;
+}
+.rel {
+	position:relative;
+}
+.top_17 {
+	top: 17px;
+}
+.w_75pct {
+	width:75%;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+	padding:5px;
+	border-radius:3px;
+	border:1px solid #BBB;
+}
