@@ -1,5 +1,7 @@
 import React from 'react';
-import style from './Title.css';
+
+// style import
+import './Title.css';
 
 export default class Title extends React.Component {
 	render() {
@@ -11,6 +13,6 @@ export default class Title extends React.Component {
 			        <i className="cloud fa fa-cloud fa-lg"></i>
 			    </h2>
 			</div>
-		)
+		);
 	}
 }
