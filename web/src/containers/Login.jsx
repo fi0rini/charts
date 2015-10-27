@@ -1,15 +1,62 @@
 import React from 'react';
+import axios from 'axios';
+
+// animation library
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
+// configuration options
+import config from '../CONFIG.js';
+
+// style
+import './Login.css';
 
 export default class Login extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			signup: true
+			signup: false
 		};
 	}
 
-	handleSignin(e) {
-		console.log('handling sign in ', e);
+	componentDidMount() {
+	 	    
+	}
+
+	handlePrimaryClick(e) {
+		let email = this._form[0].value;
+		let password = this._form[1].value;
+
+		e.preventDefault();
+
+		if ( this.state.signup ) {
+			console.log('signup');
+		} else {
+			this.signin({
+				params: {
+					email: email, 
+					password: password
+				},
+				responseType: 'json'
+			});
+		}
+	}
+
+	/**
+	 *	display a second password 
+	 *	entry for the user to verify
+	*/
+	signup() {
+
+	}
+
+	signin(credentials) {
+		axios.post(config.URL.login, credentials)
+			.then( function (response) {
+				console.log( response );
+			})
+			.catch( function (err) {
+				console.log( err );
+			})
 	}
 
 	updateState(e) {
@@ -19,10 +66,15 @@ export default class Login extends React.Component {
 
 	render() {
 		return (
-			<form className="login center">
-	        	<input name="email" type="email" placeholder="email" />
+			<form ref={ (form) => this._form = form }className="login center">
+	        	<input name="email" type="email" placeholder="Email" />
 	        	<input name="password" type="password" placeholder="Password" />
-				<button onClick={this.handleSignin.bind(this)} className="btn btn-primary">Sign {this.state.signup ? 'up' : 'in'}</button>
+	        	<ReactCSSTransitionGroup transitionName="verification" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+	        		{	this.state.signup ? 
+	        			<input key="password-verification" id="password-verification" name="password-verification" type="password" placeholder="Retype Password" /> : null
+	        		}
+				</ReactCSSTransitionGroup>
+				<button onClick={this.handlePrimaryClick.bind(this)} className="btn btn-primary">Sign {this.state.signup ? 'up' : 'in'}</button>
 				<br />
 				<div> {this.state.signup ? 'Already' : 'Not'} a member? <a onClick={this.updateState.bind(this)}> Sign {this.state.signup ? 'in' : 'up'}</a> </div>
 	        </form>
