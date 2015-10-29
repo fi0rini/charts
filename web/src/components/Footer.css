@@ -1,0 +1,12 @@
+footer {
+  text-align:center;
+}
+footer > ul.links {
+  padding:0;
+  list-style: none;
+  display:block;
+}
+footer > ul.links > li {
+  margin: 0 15px;
+  display:inline-block;
+}

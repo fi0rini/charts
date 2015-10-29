@@ -1,7 +1,7 @@
 # cloudems
 
 ## Prerequisites
-1. [node](www.nodejs.org) & [npm](www.nodejs.org)
+1. [node & npm](www.nodejs.org)
 
 ## Getting Started
 Don't run `npm i[nstall]`, all you have to do is run

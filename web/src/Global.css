@@ -1,0 +1,13 @@
+h1,h2,h3,h4,h5,p {
+  margin:0;
+  padding:0;
+}
+.center {
+  text-align:center;
+}
+.huge {
+  font-size:65px;
+}
+#app {
+  padding:20px 40px;
+}
