@@ -10,17 +10,16 @@ import config from '../CONFIG.js';
 // style
 import './Login.css';
 
-export default class Login extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
+const Login = React.createClass({
+	getInitialState() {
+		return {
 			signup: false
 		};
-	}
+	},
 
 	componentDidMount() {
-	 	    
-	}
+
+	},
 
 	handlePrimaryClick(e) {
 		let email = this._form[0].value;
@@ -32,22 +31,19 @@ export default class Login extends React.Component {
 			console.log('signup');
 		} else {
 			this.signin({
-				params: {
-					email: email, 
-					password: password
-				},
-				responseType: 'json'
+				email: email,
+				password: password
 			});
 		}
-	}
+	},
 
 	/**
-	 *	display a second password 
+	 *	display a second password
 	 *	entry for the user to verify
 	*/
 	signup() {
 
-	}
+	},
 
 	signin(credentials) {
 		axios.post(config.URL.login, credentials)
@@ -57,12 +53,12 @@ export default class Login extends React.Component {
 			.catch( function (err) {
 				console.log( err );
 			})
-	}
+	},
 
 	updateState(e) {
 		e.preventDefault();
 		this.setState({signup: !this.state.signup});
-	}
+	},
 
 	render() {
 		return (
@@ -70,15 +66,20 @@ export default class Login extends React.Component {
 	        	<input name="email" type="email" placeholder="Email" />
 	        	<input name="password" type="password" placeholder="Password" />
 	        	<ReactCSSTransitionGroup transitionName="verification" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
-	        		{	this.state.signup ? 
+	        		{	this.state.signup ?
 	        			<input key="password-verification" id="password-verification" name="password-verification" type="password" placeholder="Retype Password" /> : null
 	        		}
-				</ReactCSSTransitionGroup>
-				<button onClick={this.handlePrimaryClick.bind(this)} className="btn btn-primary">Sign {this.state.signup ? 'up' : 'in'}</button>
-				<br />
-				<div> {this.state.signup ? 'Already' : 'Not'} a member? <a onClick={this.updateState.bind(this)}> Sign {this.state.signup ? 'in' : 'up'}</a> </div>
-	        </form>
+						</ReactCSSTransitionGroup>
+						<button onClick={this.handlePrimaryClick} className="btn btn-primary">Sign {this.state.signup ? 'up' : 'in'}</button>
+						<br />
+						<div> {this.state.signup ? 'Already' : 'Not'} a member?
+							<a onClick={this.updateState}>
+								Sign {this.state.signup ? 'in' : 'up'}
+							</a>
+						</div>
+	      </form>
         )
 	}
-}
+});
 
+export default Login;

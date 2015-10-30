@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-// homepage
-import HomePage from './pages/HomePage.jsx';
+// Footer component
+import Navigator from './components/Navigator.jsx';
+import Footer from './components/Footer.jsx';
 
-export default class App extends React.Component {
+export default class App extends Component {
   render() {
     return (
-     	<HomePage />
-    )
+      <div>
+        <Navigator>
+        </Navigator>
+        { this.props.children }
+        <Footer />
+      </div>
+    );
   }
 }
