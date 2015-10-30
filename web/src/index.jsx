@@ -17,7 +17,7 @@ import './Global.css';
 
 const MainRouter = React.createClass({
   render() {
-    return  (
+    return (
       <Router>
         <Route path="/" component={App}>
           <IndexRoute component={Home} />

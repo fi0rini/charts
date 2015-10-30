@@ -23,13 +23,13 @@ module.exports = {
         loaders: ['react-hot', 'babel'],
         include: path.join(__dirname, 'src')
       },
-      {test: /\.css$/,                        loader:'style!css'},
-      {test: /\.jpe?g$|\.gif$|\.png$|\.wav$|\.mp3$/, loader: "url-loader" },
-      {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,    loader: "url-loader" },
-      {test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,   loader: "url-loader" },
-      {test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,  loader: "url-loader" },
-      {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,    loader: "url-loader" },
-      {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,    loader: "url-loader" }
+      {test: /\.css$/, loader:'style-loader!css-loader'},
+      {test: /\.jpe?g$|\.gif$|\.png$|\.wav$|\.mp3$/, loader: 'url-loader' },
+      {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader' },
+      {test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader' },
+      {test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader' },
+      {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader' },
+      {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader' }
     ]
   }
 };

@@ -132,9 +132,11 @@ sftp-config.json
 
 # npm #
 #######
-node_modules/
+node_modules
+npm-debug.log
+.DS_Store
+dist
 
 # Compass / Sass #
 ##################
 .sass-cache
-

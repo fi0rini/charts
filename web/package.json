@@ -1,37 +1,25 @@
 {
-  "name": "react-hot-boilerplate",
+  "name": "Charts-Frontend",
   "version": "1.0.0",
-  "description": "Boilerplate for ReactJS project with hot code reloading",
+  "description": "Charts front end",
   "scripts": {
     "start": "node server.js",
     "lint": "eslint src"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaearon/react-hot-boilerplate.git"
+    "url": "https://github.com/nf071590/Charts.git"
   },
-  "keywords": [
-    "react",
-    "reactjs",
-    "boilerplate",
-    "hot",
-    "reload",
-    "hmr",
-    "live",
-    "edit",
-    "webpack"
-  ],
-  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
-  "license": "MIT",
+  "author": "Nick Fiorini <nf071590@gmail.com> (http://github.com/nf071590)",
+  "license": "Personal",
   "bugs": {
-    "url": "https://github.com/gaearon/react-hot-boilerplate/issues"
+    "url": "https://github.com/nf071590/Charts/issues"
   },
-  "homepage": "https://github.com/gaearon/react-hot-boilerplate",
+  "homepage": "https://github.com/nf071590/Charts",
   "devDependencies": {
     "babel-core": "^5.8.25",
-    "babel-eslint": "^4.1.3",
     "babel-loader": "^5.3.2",
-    "eslint-plugin-react": "^3.6.2",
+    "css-loader": "^0.21.0",
     "file-loader": "^0.8.4",
     "react-hot-loader": "^1.3.0",
     "style-loader": "^0.13.0",
@@ -40,6 +28,7 @@
     "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
+    "axios": "^0.7.0",
     "bootstrap": "^3.3.5",
     "flux": "^2.1.1",
     "font-awesome": "^4.4.0",

@@ -1,18 +1,17 @@
-"use strict";
 let extend	= require('extend');
 let path 	= require('path');
 
 let defaults 	= {
 	host: '0.0.0.0',
 	port:   {
-		http:   "8000",
-		proxy:  "8001",
-		db: 	"27017"
+		http:   '8000',
+		proxy:  '8001',
+		db: 	'27017'
 	},
 	base:   __dirname,
     web:    __dirname + path.sep + 'web',
     dev:    __dirname + path.sep + 'dist',
-    list: 	(function(location) { 
+    list: 	(function(location) {
     	return require('fs')
     		.readdirSync(location)
     		.filter( function (_path) {

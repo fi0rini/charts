@@ -1,6 +1,21 @@
+/* Padding on the app to offset the navigation height*/
+#app {
+  padding-top: 50px;
+}
+nav.navigator > h1 {
+}
 nav.navigator {
-  position:absolute;
+  width:100%;
+  background-color:#EEE;
+  box-shadow: 1px 0px 2px 0px #444;
+  position:fixed;
   top:0;
-  right:0;
-  margin:20px 40px;
+  left:0;
+  background: #1a5a82;
+}
+nav.navigator > .burger {
+  float:right;
+  margin-right:20px;
+  margin-top:5px;
+  color:#EEE;
 }
