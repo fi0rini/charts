@@ -15,5 +15,8 @@
     "eslint": "^1.7.3",
     "eslint-plugin-react": "^3.6.3"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "url": "https://github.com/nf071590/charts"
+  }
 }

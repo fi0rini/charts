@@ -1,7 +1,5 @@
-"use strict";
-
-const fs 	 = require('fs');
-const split  = require('split');
+const fs = require('fs');
+const split = require('split');
 const extend = require('extend');
 
 let files = [
@@ -11,21 +9,21 @@ let files = [
 ].map((file) => 'datafiles/' + file + '.txt')
 
 let finished = 0;
-let counter  = 0;
-let nemsis 	 = {};
+let counter = 0;
+let nemsis = {};
 
 fs.createReadStream(files[0])
 	.pipe(split())
 	.on('data', function(line) {
-		line = removeFirstAndLast(line).split("'|'");
+		var _line = removeFirstAndLast(line).split('"|"');
 
 		// build data structure JSON
 
-		var dataset 	  = line[0];
-		var datasettype   = line[1];
-		var elementnumber = line[2];
-		var elementname   = line[3];
-		var attribute 	  = line[4];
+		var dataset = _line[0];
+		var datasettype = _line[1];
+		var elementnumber = _line[2];
+		var elementname = _line[3];
+		var attribute = _line[4];
 
 		nemsis[dataset] = nemsis[dataset] || {};
 		nemsis[dataset][elementnumber] = nemsis[dataset][elementnumber] || {};
@@ -42,21 +40,21 @@ fs.createReadStream(files[0])
 fs.createReadStream(files[1])
 	.pipe(split())
 	.on('data', function(line) {
-		line = removeFirstAndLast(line).split("'|'");
+		var _line = removeFirstAndLast(line).split('"|"');
 
 		// build data structure JSON
 
-		var dataset 	  = line[0];
-		var datasettype   = line[1];
-		var elementnumber = line[2];
-		var elementname   = line[3];
-		var v2number 	  = line[4];
+		var dataset = _line[0];
+		var datasettype = _line[1];
+		var elementnumber = _line[2];
+		var elementname = _line[3];
+		var v2number = _line[4];
 
 
 		nemsis[dataset] = nemsis[dataset] || {};
 		nemsis[dataset][elementnumber] = nemsis[dataset][elementnumber] || {};
-		nemsis[dataset][elementnumber].DatasetType  = datasettype;
-		nemsis[dataset][elementnumber].ElementName  = elementname;
+		nemsis[dataset][elementnumber].DatasetType = datasettype;
+		nemsis[dataset][elementnumber].ElementName = elementname;
 		nemsis[dataset][elementnumber].V2Number 	= v2number;
 		nemsis[dataset][elementnumber].National 	= line[5];
 		nemsis[dataset][elementnumber].State 		= line[6];
@@ -77,7 +75,7 @@ fs.createReadStream(files[1])
 		nemsis[dataset][elementnumber].minInclusive = line[21];
 		nemsis[dataset][elementnumber].maxInclusive = line[22];
 		nemsis[dataset][elementnumber].minExclusive = line[23];
-		nemsis[dataset][elementnumber].totalDigits  = line[24];
+		nemsis[dataset][elementnumber].totalDigits = line[24];
 		nemsis[dataset][elementnumber].fractionDigits = line[25];
 		nemsis[dataset][elementnumber].pattern 		= line[26];
 
@@ -90,13 +88,13 @@ fs.createReadStream(files[1])
 fs.createReadStream(files[2])
 	.pipe(split())
 	.on('data', function(line) {
-		line = removeFirstAndLast(line).split("'|'");
+		var _line = removeFirstAndLast(line).split('"|"');
 
 		// build data structure JSON
 
-		var dataset 	  = line[0];
-		var elementnumber = line[1];
-		var elementname   = line[2];
+		var dataset = _line[0];
+		var elementnumber = _line[1];
+		var elementname = _line[2];
 
 
 		nemsis[dataset] = nemsis[dataset] || {};
@@ -111,8 +109,8 @@ fs.createReadStream(files[2])
 
 
 function removeFirstAndLast (str) {
-	str = str.slice(1);
-	str = str.slice(0, str.length-2);
+	var _str = str.slice(1);
+	_str = _str.slice(0, str.length-2);
 	return str;
 }
 

@@ -1,5 +1,7 @@
 let extend	= require('extend');
 let path 	= require('path');
+let fs = require('fs');
+
 
 let defaults 	= {
 	host: '0.0.0.0',
@@ -11,20 +13,12 @@ let defaults 	= {
 	base:   __dirname,
     web:    __dirname + path.sep + 'web',
     dev:    __dirname + path.sep + 'dist',
-    list: 	(function(location) {
-    	return require('fs')
-    		.readdirSync(location)
-    		.filter( function (_path) {
-    			return require('fs')
-    				.statSync(location + path.sep + _path).isDirectory();
-    		})
-    		.map( function (_path) {
-    			return '/' + _path;
-    		});
+    list: 	((location) => {
+    	return fs.readdirSync(location)
+    		.filter((_path) => fs.statSync(location + path.sep + _path).isDirectory())
+    		.map( (_path) => '/' + _path );
 
     }('./data'))
 };
 
-module.exports	= function(options){
-	return extend(true, defaults, options);
-};
+module.exports	= (options) => extend(true, defaults, options);
